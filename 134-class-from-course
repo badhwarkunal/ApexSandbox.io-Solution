@@ -1,6 +1,6 @@
 public Id classFromCourse(String courseName) {
     // code here
-    Id cId = [Select Id from apxio__Course__c where Name =: courseName Limit 1].Id;
+    Id cId = [Select Id from apxio__Course__c where Name =: courseName Limit 1].Id?null;
     apxio__Class__c acl = new apxio__Class__c(Name = courseName, apxio__Course__c = cId);
     insert acl;
     return acl.Id;

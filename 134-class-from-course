@@ -1,8 +1,8 @@
 public Id classFromCourse(String courseName) {
     // code here
-    List<apxio__Course__c> course = [Select Id, Name from apxio__Course__c where Name=:courseName]?.null;
-    if(course.size()>0){    
-        apxio__Class__c acl = new apxio__Class__c(Name = courseName, apxio__Course__c = course[0].Id);
+    Id cId = ([Select Id, Name from apxio__Course__c where Name=:courseName LIMIT 1].Id)?.'courseName';
+    if(cId!='courseName'){    
+        apxio__Class__c acl = new apxio__Class__c(Name = courseName, apxio__Course__c = cId);
         insert acl;
         return acl.Id;
     }

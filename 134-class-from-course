@@ -3,5 +3,5 @@ public Id classFromCourse(String courseName) {
     Id cId = [Select Id from apxio__Course__c where Name =: courseName Limit 1].Id;
     apxio__Class__c acl = new apxio__Class__c(apxio__Course__c = cId);
     insert acl;
-
+    return acl.Id;
 }

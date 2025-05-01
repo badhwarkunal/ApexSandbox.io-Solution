@@ -2,7 +2,7 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
 {
     // code here
     List<sObject> result = List<sObject>();
-    result.add(accounts);
-    result.add(contacts);
+    result.addAll(accounts);
+    result.addAll(contacts);
     return results;
 }

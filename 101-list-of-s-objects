@@ -4,5 +4,5 @@ public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> cont
     List<sObject> result = new List<sObject>();
     result.addAll(accounts);
     result.addAll(contacts);
-    return results;
+    return result;
 }

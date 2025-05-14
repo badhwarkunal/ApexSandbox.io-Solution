@@ -5,7 +5,7 @@ public List<Account> getAccounts(List<Account> accounts) {
 
 public class revComparator implements comparator<Account>(){
     public integer comapare(Account acc1, Account acc2){
-        if(acc1?.AnnualRevenue == null && acc2?.AnnualRevenue)
+        if(acc1?.AnnualRevenue == null && acc2?.AnnualRevenue == null)
             return 0;
         else if( acc1.AnnualRevenue < acc2.AnnualRevenue)
             return 1;

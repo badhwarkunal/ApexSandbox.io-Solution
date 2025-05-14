@@ -9,6 +9,6 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
             if (String.isBlank(s1) || String.isBlank(s2)) {
                 return -1;
             }
-            return s1.compareToIgnoreCase(s2);
+            return s1.compareToIgnoreCase(s2)? 1 : 0;
         }
-    }
+}

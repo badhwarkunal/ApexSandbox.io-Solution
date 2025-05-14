@@ -10,5 +10,5 @@ public Integer maxConsecutiveOnes(Integer[] numbers) {
         maxCount = maxCount < count ? count : maxCount;
 
     }
-    return count;
+    return maxCount;
 }

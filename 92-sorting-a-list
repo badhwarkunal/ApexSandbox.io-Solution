@@ -1,6 +1,6 @@
 public List<String> getNamesInAscOrder(List<String> accountNames)
 {
-    accountNames.sort(accComparator);
+    accountNames.sort(new AccComparator());
     return accountNames;
 }
  public static accComparator implements comparator<String>{
@@ -13,3 +13,4 @@ public List<String> getNamesInAscOrder(List<String> accountNames)
             return 1;
      }
  }
+

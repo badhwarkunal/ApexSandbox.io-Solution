@@ -3,7 +3,7 @@ public List<Account> getAccounts(List<Account> accounts) {
     return accounts;
 }
 
-public class revComparator implements comparator<Account>(){
+public class revComparator implements comparator<Account>{
     public integer compare(Account acc1, Account acc2){
         if(acc1?.AnnualRevenue == null && acc2?.AnnualRevenue == null){
             return 0;

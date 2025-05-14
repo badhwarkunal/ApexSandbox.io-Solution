@@ -1,14 +1,5 @@
 public List<String> getNamesInAscOrder(List<String> accountNames)
 {
-        accountNames.sort(new AccComparator());
+        accountNames.sort();
         return accountNames;
-    }
-
-    public class AccComparator implements Comparator<String> {
-        public Integer compare(String s1, String s2) {
-            if (String.isBlank(s1) || String.isBlank(s2)) {
-                return -1;
-            }
-            return s1.compareToIgnoreCase(s2)? 1 : 0;
-        }
 }

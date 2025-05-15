@@ -1,4 +1,5 @@
 public class LinkedList{    
+    
     List<Node> Linked = new List<Node>();
     
     public void addToFront(Integer value) {
@@ -8,7 +9,7 @@ public class LinkedList{
     
     public Integer removeFromFront() {
         if (Linked.isEmpty()) {
-            return null;
+            return null; 
         }
         Integer value = Linked[0].data;
         Linked.remove(0);

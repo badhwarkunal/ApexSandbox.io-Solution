@@ -8,7 +8,9 @@ public class Stack {
     
     public Object pop() {
         //implement pop
+        Object op = objList[objList.size()-1];
         objList.remove(objList.size()-1);
+        return op;
     }
     
     public Integer size() {

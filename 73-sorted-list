@@ -1,26 +1,21 @@
 public boolean isSorted(List<Integer> numbers) {
-    Boolean flag = true;
-    if (numbers.size() < 2)
-        return flag;
-    else {
-        if (numbers.get(0) < numbers.get(numbers.size() - 1)) {
-            for (Integer i = 1; i < numbers.size() - 1; i++) {
-                if (numbers.get(i) > numbers.get(i + 1)) {
-                    flag = false;
-                    break;
-                }
-            }
-        } else {
-            for (Integer i = 1; i < numbers.size() - 1; i++) {
-                if (numbers.get(i) < numbers.get(i + 1)) {
-                    flag = false;
-                    break;
-                }
-            }
+    if (numbers.size() < 2) return true;
+
+    boolean ascending = true;
+    boolean descending = true;
+
+    for (int i = 0; i < numbers.size() - 1; i++) {
+        if (numbers.get(i) > numbers.get(i + 1)) {
+            ascending = false;
+        }
+        if (numbers.get(i) < numbers.get(i + 1)) {
+            descending = false;
         }
     }
-    return flag;
+
+    return ascending || descending;
 }
+
 
 
 

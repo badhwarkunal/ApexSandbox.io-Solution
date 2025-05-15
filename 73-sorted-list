@@ -1,20 +1,18 @@
 public boolean isSorted(List<Integer> numbers) {
-    //code here
-    boolean flag = true;
-    if(numbers.size()<2)
+    Boolean flag = true;
+    if (numbers.size() < 2)
         return flag;
-    else{
-        if(numbers.get(0)<numbers.get(numbers.size()-1)){}       {
-            for(Integer i = 1; i< numbers.size()-1;i++){
-                if(numbers[i] > numbers[i+1]){
+    else {
+        if (numbers.get(0) < numbers.get(numbers.size() - 1)) {
+            for (Integer i = 1; i < numbers.size() - 1; i++) {
+                if (numbers.get(i) > numbers.get(i + 1)) {
                     flag = false;
                     break;
                 }
             }
-        }
-        else{
-            for(Integer i = 1; i< numbers.size()-1;i++){
-                if(numbers[i] < numbers[i+1]){
+        } else {
+            for (Integer i = 1; i < numbers.size() - 1; i++) {
+                if (numbers.get(i) < numbers.get(i + 1)) {
                     flag = false;
                     break;
                 }
@@ -24,4 +22,5 @@ public boolean isSorted(List<Integer> numbers) {
     return flag;
 }
 
-//        return ((sortNumbers[0] == numbers[0] && sortNumbers[numbers.size()-1] == numbers[numbers.size()-1]) && (sortNumbers[0] == numbers[numbers.size()-1] && sortNumbers[numbers.size()-1] == numbers[0]));
+
+

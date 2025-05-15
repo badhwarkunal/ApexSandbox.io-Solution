@@ -4,8 +4,9 @@ public Boolean isPalindrome(String str){
     str =  str.toLowerCase();
     System.debug('Modified str ' +  str);
     for(Integer i =0 ; i< (str.length()/2);i++){
+        system.debug('outer i = ' + i);
         if (str.substring(i, i + 1) != str.substring(str.length() - i - 1, str.length() - i)) {
-            system.debug('i = ' + i);
+            system.debug('Inner i = ' + i);
             system.debug('Start ' + str.substring(i, i + 1));
             system.debug('End ' + str.substring(str.length() - i - 1, str.length() - i));
 

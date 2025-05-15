@@ -4,8 +4,7 @@ public boolean isSorted(List<Integer> numbers) {
     if(numbers.size()<2)
         return flag;
     else{
-        if(numbers.get(start)<numbers.get(ends))
-        {
+        if(numbers.get(start)<numbers.get(ends)){}       {
             for(Integer i = 1; i< numbers.size()-1;i++){
                 if(numbers[i] > numbers[i+1]){
                     flag = false;

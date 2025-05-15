@@ -1,5 +1,4 @@
 public class LinkedList{
-    public class LinkedList {
     
     List<Node> Linked = new List<Node>();
     

@@ -4,7 +4,7 @@ public Boolean isPalindrome(String str){
     for(Integer i =0 ; i< (str.length()/2);i++){
         if (str.substring(i, i + 1) != str.substring(str.length() - i - 1, str.length() - i)) {
             system.debug('Start ' + str.substring(i, i + 1));
-            system.debug('End ' + str.substring(str.length() - i - 1, str.length() - i))
+            system.debug('End ' + str.substring(str.length() - i - 1, str.length() - i));
 
             return false; 
         }

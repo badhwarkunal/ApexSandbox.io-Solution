@@ -1,5 +1,4 @@
-public class LinkedList{
-    
+public class LinkedList{    
     List<Node> Linked = new List<Node>();
     
     public void addToFront(Integer value) {
@@ -8,6 +7,9 @@ public class LinkedList{
     }
     
     public Integer removeFromFront() {
+        if (Linked.isEmpty()) {
+            return null;
+        }
         Integer value = Linked[0].data;
         Linked.remove(0);
         return value;
@@ -23,6 +25,9 @@ public class LinkedList{
     }
     
     public Integer removeFromTail() {
+        if (Linked.isEmpty()) {
+            return null; 
+        }
         Integer value = Linked[Linked.size() - 1].data;
         Linked.remove(Linked.size() - 1);
         return value;
@@ -36,7 +41,8 @@ public class LinkedList{
 public class Node {
     Integer data;
     Node next;
-        public Node(Integer data, Node next) {
+    
+    public Node(Integer data, Node next) {
         this.data = data;
         this.next = next;
     }

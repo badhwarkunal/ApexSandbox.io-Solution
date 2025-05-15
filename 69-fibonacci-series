@@ -1,0 +1,14 @@
+public List<Integer> fibonacciSeries(Integer n) {
+    //code here
+    List<Integer> fser = new List<Integer>{1,1};
+    if(n==1)
+        return new List<Integer>{1};
+    if(n==2)
+        return new List<Integer>{1,1};
+    for(Integer i =2; i<= n ; i++)
+    {
+        fser.add(fser[i-1] + fser[i-2]);
+    }
+    return fser;
+    
+}

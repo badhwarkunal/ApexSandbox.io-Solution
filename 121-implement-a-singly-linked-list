@@ -1,37 +1,44 @@
 public class LinkedList{
+    public class LinkedList {
     
     List<Node> Linked = new List<Node>();
-    public void addToFront(Integer value){
-        Node firstNode = Linked.isEmpty()? null : Linked[0];
-        Linked.add(new Node{
-            data = value;
-            next = firstNode;
-        });
+    
+    public void addToFront(Integer value) {
+        Node firstNode = Linked.isEmpty() ? null : Linked[0];
+        Linked.add(0, new Node(value, firstNode));
     }
-    public Integer removeFromFront(){
-        Integer int = Linked[0].data
+    
+    public Integer removeFromFront() {
+        Integer value = Linked[0].data;
         Linked.remove(0);
-        return int;
+        return value;
     }
-    public void addToTail(Integer value){
-        Node LastNode = Linked.isEmpty()? null : Linked[Linked.size()-1];
-        Linked.add(new Node{
-            data = value;
-            next = null;
-        });
-        LastNode.next =  Linked[Linked.size()-1];
+    
+    public void addToTail(Integer value) {
+        Node lastNode = Linked.isEmpty() ? null : Linked[Linked.size() - 1];
+        Node newNode = new Node(value, null);
+        Linked.add(newNode);
+        if (lastNode != null) {
+            lastNode.next = newNode;
+        }
     }
-    public Integer removeFromTail(){
-        Integer int = Linked[Linked.size()-1].data
-        Linked.remove(Linked.size()-1);
-        return int;
+    
+    public Integer removeFromTail() {
+        Integer value = Linked[Linked.size() - 1].data;
+        Linked.remove(Linked.size() - 1);
+        return value;
     }
-    public Integer size(){
-        return Linked.size()-1;
-    }    
+    
+    public Integer size() {
+        return Linked.size();
+    }
 }
 
-public class Node{
+public class Node {
     Integer data;
     Node next;
+        public Node(Integer data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
 }

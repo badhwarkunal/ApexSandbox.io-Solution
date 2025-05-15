@@ -1,0 +1,37 @@
+public class LinkedList{
+    
+    List<Node> Linked = new List<Node>();
+    public void addToFront(Integer value){
+        Node firstNode = Linked.isEmpty()? null : Linked[0];
+        Linked.add(new Node{
+            data = value;
+            next = firstNode;
+        });
+    }
+    public Integer removeFromFront(){
+        Integer int = Linked[0].data
+        Linked.remove(0);
+        return int;
+    }
+    public void addToTail(Integer value){
+        Node LastNode = Linked.isEmpty()? null : Linked[Linked.size()-1];
+        Linked.add(new Node{
+            data = value;
+            next = null;
+        });
+        LastNode.next =  Linked[Linked.size()-1];
+    }
+    public Integer removeFromTail(){
+        Integer int = Linked[Linked.size()-1].data
+        Linked.remove(Linked.size()-1);
+        return int;
+    }
+    public Integer size(){
+        return Linked.size()-1;
+    }    
+}
+
+public class Node{
+    Integer data;
+    Node next;
+}

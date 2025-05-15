@@ -5,5 +5,5 @@ public boolean isSorted(List<Integer> numbers) {
     if(numbers.size()<2)
         return true;
     else
-        return sortNumbers[0] == numbers[0] || sortNumbers[0] == numbers[numbers.size()-1];
+        return ((sortNumbers[0] == numbers[0] && sortNumbers[numbers.size()-1] == numbers[numbers.size()-1]) && (sortNumbers[0] == numbers[numbers.size()-1] && sortNumbers[numbers.size()-1] == numbers[0]));
 }

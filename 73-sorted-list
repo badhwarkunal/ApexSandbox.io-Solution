@@ -1,9 +1,28 @@
 public boolean isSorted(List<Integer> numbers) {
     //code here
-    List<Integer> sortNumbers = numbers.clone();
-    sortNumbers.sort();
+    boolean flag = true;
     if(numbers.size()<2)
-        return true;
-    else
-        return ((sortNumbers[0] == numbers[0] && sortNumbers[numbers.size()-1] == numbers[numbers.size()-1]) && (sortNumbers[0] == numbers[numbers.size()-1] && sortNumbers[numbers.size()-1] == numbers[0]));
+        return flag;
+    else{
+        if(numbers.get(start)<numbers.get(ends))
+        {
+            for(Integer i = 1; i< numbers.size()-1;i++){
+                if(numbers[i] > numbers[i+1]){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        else{
+            for(Integer i = 1; i< numbers.size()-1;i++){
+                if(numbers[i] < numbers[i+1]){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+    }
+    return flag;
 }
+
+//        return ((sortNumbers[0] == numbers[0] && sortNumbers[numbers.size()-1] == numbers[numbers.size()-1]) && (sortNumbers[0] == numbers[numbers.size()-1] && sortNumbers[numbers.size()-1] == numbers[0]));

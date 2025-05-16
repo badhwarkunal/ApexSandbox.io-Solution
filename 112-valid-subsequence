@@ -1,0 +1,14 @@
+public Boolean isSubSequence(String s1, String s2){
+    //code here
+    Integer l1 = s1.length();
+    Integer l2 = s2.length();
+    Integer i = 0;
+    Integer j = 0;
+    while (i < l1 && j < l2) {
+        if (s1.substring(i,i+1) == s2.substring(j,j+1))
+            i++;
+        j++;
+    }
+    return i == l1;
+
+}

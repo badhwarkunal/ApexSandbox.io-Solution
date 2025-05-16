@@ -4,7 +4,7 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
     List<Integer> mergedList = new List<Integer>(list1);
     for(Integer i=0; i < list2.size(); i++){
         while(j<mergedList.size()){
-            if(mergedList[j] < list2[i]){
+            if(mergedList[j] > list2[i]){
                 mergedList.add(j,list2[i]);
                 break;
             }

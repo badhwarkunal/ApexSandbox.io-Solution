@@ -11,5 +11,6 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
             j++;
         }
     }
+    system.debug(mergedList);
     return mergedList;
 }

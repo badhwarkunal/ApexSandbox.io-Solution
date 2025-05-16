@@ -1,21 +1,18 @@
 public boolean isAnagram(String s1, String s2) {
+    if (s1 == null || s2 == null || s1.length() != s2.length()) {
+        return false;
+    }
     Map<String, Integer> map1 = new Map<String, Integer>();
-    if(s1 == null || s2 == null || s1.length() != s.length() ){
-        return false;
+    for (Integer i = 0; i < s1.length(); i++) {
+        String c1 = s1.substring(i, i + 1);
+        String c2 = s2.substring(i, i + 1);
+        map1.put(c1, map1.containsKey(c1) ? map1.get(c1) + 1 : 1);
+        map1.put(c2, map1.containsKey(c2) ? map1.get(c2) - 1 : -1);
     }
-    else{
-        for(Integer i =0 ; i< s1.length(); i++){
-            if(!map1.containsKey(s1.substring(i,i+1))){
-                map1.put(s1.substring(i,i+1), 0);
-            }
-            map1.put(s1.substring(i,i+1), map1.get(s1.substring(i,i+1)) + 1);
-            map1.put(s2.substring(i,i+1), map1.get(s2.substring(i,i+1)) - 1);
+    for (Integer count : map1.values()) {
+        if (count != 0) {
+            return false;
         }
-    }
-
-    for(Integer i:map1.values()){
-        if(i != 0) 
-        return false;
     }
     return true;
 }

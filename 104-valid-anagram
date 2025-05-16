@@ -1,6 +1,6 @@
 public boolean isAnagram(String s1, String s2) {
     if(s1 == null || s2 == null || s1.size() != s.size() ){
-        return false
+        return false;
     }
     else{
         Map<String, Integer> map1 = new Map<String, Integer>();

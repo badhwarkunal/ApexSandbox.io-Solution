@@ -4,8 +4,8 @@ public Integer maxProfit(List<Integer> prices){
     Integer min_price = prices[0];
     Integer max_profit;
     for(Integer price : prices){
-        max_profit = max(max_profit, price - min_price);
-        min_price = min(min_price, price);
+        max_profit = MATH.max(max_profit, price - min_price);
+        min_price = MATH.min(min_price, price);
     }
     return max_profit;
 }

@@ -1,0 +1,11 @@
+public Integer maxProfit(List<Integer> prices){
+    //code here
+    Integer min = 0;
+    Integer min_price = prices[0];
+    Integer max_profit;
+    for(Integer price : prices){
+        max_profit = max(max_profit, price - min_price);
+        min_price = min(min_price, price);
+    }
+    return max_profit;
+}

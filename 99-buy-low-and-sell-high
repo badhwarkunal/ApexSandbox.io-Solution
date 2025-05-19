@@ -1,8 +1,7 @@
 public Integer maxProfit(List<Integer> prices){
     //code here
-    Integer min = 0;
     Integer min_price = prices[0];
-    Integer max_profit;
+    Integer max_profit = 0;
     for(Integer price : prices){
         max_profit = MATH.max(max_profit, price - min_price);
         min_price = MATH.min(min_price, price);

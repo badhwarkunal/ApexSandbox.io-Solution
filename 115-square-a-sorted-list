@@ -1,0 +1,8 @@
+public static List<Integer> squareList(List<Integer> nums){
+    //solution here
+    for(Integer num : nums){
+        num *= num;
+    }
+    
+    return nums;
+}

@@ -1,4 +1,5 @@
 public static List<Integer> squareList(List<Integer> nums){
+    if (nums == null || nums.isEmpty()) return new ArrayList<Integer>();
     List<Integer> sortSquare = new ArrayList<Integer>();
     for (Integer num : nums) {
         sortSquare.add(num * num);
@@ -9,7 +10,7 @@ public static List<Integer> squareList(List<Integer> nums){
 
 // Implemented Merge Sort
 public static List<Integer> mergeSort(List<Integer> arr, Integer left, Integer right) {
-    if (left >= right) {
+    if (left == right) {
         List<Integer> single = new ArrayList<>();
         single.add(arr.get(left));
         return single;
@@ -38,4 +39,3 @@ public static List<Integer> merge(List<Integer> leftList, List<Integer> rightLis
     }
     return merged;
 }
-

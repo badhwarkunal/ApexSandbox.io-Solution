@@ -1,7 +1,7 @@
 public static List<Integer> squareList(List<Integer> nums){
     List<Integer> sortSquare = new List<Integer>();
     for(Integer num : nums){
-        sortSquare.add(num*nums)
+        sortSquare.add(num*num);
     }
     
     return sortSquare.sort();

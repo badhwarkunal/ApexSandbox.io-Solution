@@ -4,5 +4,6 @@ public static List<Integer> squareList(List<Integer> nums){
         sortSquare.add(num*num);
     }
     
-    return sortSquare.sort();
+    sortSquare.sort();
+    return sortSquare;
 }

@@ -1,9 +1,41 @@
 public static List<Integer> squareList(List<Integer> nums){
-    List<Integer> sortSquare = new List<Integer>();
-    for(Integer num : nums){
-        sortSquare.add(num*num);
+    List<Integer> sortSquare = new ArrayList<Integer>();
+    for (Integer num : nums) {
+        sortSquare.add(num * num);
     }
-    
-    sortSquare.sort();
-    return sortSquare;
+    // Sort using merge sort
+    return mergeSort(sortSquare, 0, sortSquare.size() - 1);
 }
+
+// Implemented Merge Sort
+public static List<Integer> mergeSort(List<Integer> arr, Integer left, Integer right) {
+    if (left >= right) {
+        List<Integer> single = new ArrayList<>();
+        single.add(arr.get(left));
+        return single;
+    }
+    int mid = left + (right - left) / 2;
+    List<Integer> leftList = mergeSort(arr, left, mid);
+    List<Integer> rightList = mergeSort(arr, mid + 1, right);
+    return merge(leftList, rightList);
+}
+
+public static List<Integer> merge(List<Integer> leftList, List<Integer> rightList) {
+    List<Integer> merged = new ArrayList<>();
+    int i = 0, j = 0;
+    while (i < leftList.size() && j < rightList.size()) {
+        if (leftList.get(i) <= rightList.get(j)) {
+            merged.add(leftList.get(i++));
+        } else {
+            merged.add(rightList.get(j++));
+        }
+    }
+    while (i < leftList.size()) {
+        merged.add(leftList.get(i++));
+    }
+    while (j < rightList.size()) {
+        merged.add(rightList.get(j++));
+    }
+    return merged;
+}
+

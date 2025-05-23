@@ -5,6 +5,7 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     for (Integer i = 0; i < nums.size(); i++) {
         system.debug(numMap);
         if (numMap.containsKey(target - nums[i])) {
+            system.debug('Found : ' + numMap.get(target - nums[i]) + ': ' + i);
             return new List<Integer>{numMap.get(target - nums[i]), i};
         } else {
             numMap.put(target - nums[i], i);

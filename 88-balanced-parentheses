@@ -10,9 +10,9 @@ public Boolean isValid(String s){
         String ch = String.valueOf(s.charAt(i));
         if (par.containsKey(ch)) {
             stack.add(ch);
-        } else if (par.get(stack[stack.size() - 1]) == ch) {
+        } else if (!stack.isEmpty() && par.get(stack[stack.size() - 1]) == ch) {
             stack.remove(stack.size() - 1);
-        } else {
+        } else if(i == s.length()-1){
             return false;
         }
     }

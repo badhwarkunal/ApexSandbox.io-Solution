@@ -1,26 +1,21 @@
 public Boolean isValid(String s){
-        List<String> stack = new List<String>();
-        Map<String, String> par = new Map<String, String>{
-            '(' => ')',
-            '{' => '}',
-            '[' => ']'
-        };
+    List<String> stack = new List<String>();
+    Map<String, String> par = new Map<String, String>{
+        '(' => ')',
+        '{' => '}',
+        '[' => ']'
+    };
 
-        for (Integer i = 0; i < s.length(); i++) {
-            String ch = String.valueOf(s.charAt(i));
-            if (par.containsKey(ch)) {
-                stack.add(ch);
-            } else {
-                if (stack.isEmpty()) {
-                    return false;
-                }
-                String last = stack.remove(stack.size() - 1);
-                if (!par.get(last).equals(ch)) {
-                    return false;
-                }
+    for (Integer i = 0; i < s.length(); i++) {
+        String ch = String.valueOf(s.charAt(i));
+        if (par.containsKey(ch)) {
+            stack.add(par.get(ch));
+        } else {
+            if (stack.isEmpty() || !stack.get(stack.size() - 1).equals(ch)) {
+                return false;
             }
+            stack.remove(stack.size() - 1);
         }
-        return stack.isEmpty();
     }
-
-
+    return stack.isEmpty();
+}

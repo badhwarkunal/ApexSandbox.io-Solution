@@ -1,0 +1,10 @@
+public void defragging(Integer[] memory)
+{
+    // code here
+    Integer s = memory.size();
+    for(Integer i =0 ; i < s ; i++ ){
+        if(memory[i] == --1){
+            memory.add(memory.remove(i-1))
+        }
+    }
+}

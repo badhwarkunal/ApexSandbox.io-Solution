@@ -1,0 +1,23 @@
+public Boolean isValid(String s){
+    //code here 
+
+    List<String> stack = new List<String>();
+    Map<String, String> par = new Map<String, String>(
+        '(' => ')', 
+        '{' => '}', 
+        '['=> ']'
+    );
+    List<String> str = s.split();
+    for(String s : str){
+        if(par.containskey(s)){
+            stack.add(s);
+        }
+        else if(s == par.get(stack[stack.size()-1] )){
+            stack.remove(stack[stack.size()-1)
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}

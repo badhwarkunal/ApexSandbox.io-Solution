@@ -6,16 +6,5 @@ public Boolean isValid(String s){
         '[' => ']'
     };
 
-    for (Integer i = 0; i < s.length(); i++) {
-        String ch = String.valueOf(s.charAt(i));
-        if (par.containsKey(ch)) {
-            stack.add(par.get(ch));
-        } else {
-            if (stack.isEmpty() || !stack.get(stack.size() - 1).equals(ch)) {
-                return false;
-            }
-            stack.remove(stack.size() - 1);
-        }
-    }
-    return stack.isEmpty();
+
 }

@@ -1,6 +1,6 @@
 public void defragging(Integer[] memory)
 {
-    for(Integer i =0 ; i <  memory.size(); ; i++ ){
+    for(Integer i =0 ; i <  memory.size() ; i++ ){
         if(memory[i] == -1){
             memory.add(memory.remove(i));
         }

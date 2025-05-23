@@ -8,6 +8,4 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
             numMap.put(target - nums[i], i);
         }
     }
-    
-    return new List<Integer>();
 }

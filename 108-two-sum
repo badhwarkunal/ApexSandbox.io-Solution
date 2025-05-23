@@ -9,5 +9,4 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
             numMap.put(nums[i], i);
         }
     }
-    return new List<Integer>(); 
 }

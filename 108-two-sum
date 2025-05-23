@@ -1,11 +1,13 @@
 public static List<Integer> twoSum(List<Integer> nums, Integer target) {
-     Map<Integer, Integer> numMap = new Map<Integer,Integer>();
-     for(Integer i = 0; i < nums.size() ; i++){
-         if(numMap.containsKey(target - nums[i])){
-             return new List<Integer>{numMap.get(target - nums[i],i};
-         }
-         else{
-             numMap.put(target - nums[i],i);
-         }
-     }
+    Map<Integer, Integer> numMap = new Map<Integer, Integer>();
+    
+    for (Integer i = 0; i < nums.size(); i++) {
+        if (numMap.containsKey(target - nums[i])) {
+            return new List<Integer>{numMap.get(target - nums[i]), i};
+        } else {
+            numMap.put(target - nums[i], i);
+        }
+    }
+    
+    return new List<Integer>();
 }

@@ -5,7 +5,7 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
              return new List<Integer>{numMap.get(target - nums[i]),i};
          }
          else{
-             numMap.put(target - nums[i]),i);
+             numMap.put(target - nums[i],i);
          }
      }
 }

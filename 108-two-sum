@@ -1,6 +1,7 @@
 public static List<Integer> twoSum(List<Integer> nums, Integer target) {
     Map<Integer, Integer> numMap = new Map<Integer, Integer>();
-    
+    system.debug(nums);
+    system.debug(target);
     for (Integer i = 0; i < nums.size(); i++) {
         system.debug(numMap);
         if (numMap.containsKey(target - nums[i])) {

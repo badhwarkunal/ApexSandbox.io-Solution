@@ -1,0 +1,13 @@
+public static void segregateEvenOdd(List<Integer> numbers){
+    //code here
+    Integer num;
+    for(Integer i = 0; i < numbers.size()-1 ; i++){
+        num = numbers.remove(i);
+        if(num%2==0){
+            numbers.add(0,num);
+        }
+        else{
+            numbers.add(num);
+        }
+    }
+}

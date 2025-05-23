@@ -7,9 +7,7 @@ public Boolean isValid(String s){
     };
 
     for (Integer i = 0; i < s.length(); i++) {
-        system.debug(stack);
-        String ch = String.valueOf(s.charAt(i));
-        system.debug('ch : ' + ch);
+        String ch = s.substring(i, i + 1); 
         if (par.containsKey(ch)) {
             stack.add(par.get(ch));
         } else {

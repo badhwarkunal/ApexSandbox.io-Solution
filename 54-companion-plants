@@ -1,0 +1,17 @@
+public Boolean companionPlants(String plant1, String plant2) {
+    //code here
+    Map<String,Set<String>> cp = new Map<String,Set<String>>{
+        'onions' => new set<String>{'lettuce', 'carrots', 'tomatoes'},
+        'lettuce' => new set<String>{'onions', 'cucumbers'}
+    };
+    if(cp.containsKey(plant1))
+    {
+        return cp.get(plant1).contains(plant2);
+    }
+    else if(cp.containsKey(plant2)){
+        return cp.get(plant2).contains(plant1);
+    }
+    else{
+        return false;
+    }
+}

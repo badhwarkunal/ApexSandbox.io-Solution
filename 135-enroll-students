@@ -1,0 +1,8 @@
+public void enrollStudents(List<String> emails, String className) {
+    id cId = [select id, Name from apxio__Class__c where Name = : className].Id;
+    List<apxio__Class_Enrollment__c> eList = new List<apxio__Class_Enrollment__c>();
+    for(apxio__Student__c s: [select id, apxio__Email__c from apxio__Student__c where apxio__Email__c in:emails]){
+        eList.add(new apxio__Class_Enrollment__c(apxio__Student__c = s.Id, apxio__Offered_Class__c = cId));
+    }
+    insert eList;
+}

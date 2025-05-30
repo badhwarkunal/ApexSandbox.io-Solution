@@ -1,0 +1,8 @@
+public String nameFromEmail(String email) {
+    //code here
+    String[] parts = email.split('@');
+    String[] names = parts[0].split('\\.');
+    String firstName = names[0].substring(0, 1).toUpperCase() + names[0].substring(1).toLowerCase();
+    String lastName = names[1].substring(0, 1).toUpperCase() + names[1].substring(1).toLowerCase();
+    return firstName + ' ' + lastName;
+}

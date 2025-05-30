@@ -1,0 +1,16 @@
+public String changeTimeFormat(String strTime) {
+    Integer n = Integer.valueOf(strTime.split(':')[0]);
+
+    if(n==0){
+        return '12:'+ strTime.split(':')[1] + ' AM';
+    }
+    if(n==12){
+        return '12:'+ strTime.split(':')[1] + ' PM';
+    }
+    else if(n<12){
+        return strTime + ' AM';
+    }
+    else{
+        return String.valueOf(n-12).leftPad(2, '0') + ':' + strTime.split(':')[1] + ' PM';
+    }
+}

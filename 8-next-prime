@@ -1,0 +1,41 @@
+public Integer nextPrime(Integer num) {
+    if (num <= 1) return 2;
+    Integer prime = num;
+    Boolean found = false;
+    while (!found) {
+        prime++;
+        if (isPrime(prime)){
+            found = true;
+        }
+    }
+    return prime;
+}
+private static List<Integer> primes = new List<Integer>{2, 3};
+public  Boolean isPrime(Integer n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    
+    Integer lastChecked = primes[primes.size() - 1];
+    while (lastChecked * lastChecked <= n) {
+        lastChecked++;
+        Boolean isPrime = true;
+        for (Integer p : primes) {
+            if (p * p > lastChecked) break;
+            if (Math.mod(lastChecked, p) == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            primes.add(lastChecked);
+        }
+    }
+
+    for (Integer prime : primes) {
+        if (prime * prime > n) break;
+        if (Math.mod(n, prime) == 0) return false;
+    }
+    primes.add(n);
+    return true;
+}
+

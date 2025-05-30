@@ -1,0 +1,8 @@
+public List<apxio__Student__c> selectStudentsWithoutContactInfo() {
+    // code here
+    return [Select id, name from apxio__Student__c
+                    where apxio__Active__c = True and
+                    (apxio__Email__c = null or
+                    apxio__Phone__c = null)
+                    Order by name asc];
+}

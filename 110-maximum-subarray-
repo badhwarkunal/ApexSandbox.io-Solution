@@ -7,7 +7,7 @@ public static Integer maxSubArraySum(List<Integer> nums, Integer target){
     Integer temp  = total;
     for(Integer i = target + k ; i < nums.size(); k++){
         temp = total - nums[k] + nums[i] ;
-        total = total > temp ? total : temp
+        total = total > temp ? total : temp;
     }
     return total;
 }

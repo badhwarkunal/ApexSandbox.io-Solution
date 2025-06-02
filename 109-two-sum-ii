@@ -1,5 +1,5 @@
 public List<Integer> twoSum(List<Integer> nums, Integer target){
-    nums = nums.sort();
+    nums.sort();
     Map<Integer, Integer> numMap = new Map<Integer, Integer>();
     for (Integer i = 0; i < nums.size(); i++) {
         if (numMap.containsKey(target - nums[i])) {

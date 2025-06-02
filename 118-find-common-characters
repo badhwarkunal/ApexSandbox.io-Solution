@@ -3,7 +3,7 @@ public List<String> commonChars(List<String> strs){
     Map<String, Integer> minFreq = new Map<String, Integer>();
     for (Integer i = 0; i < 26; i++) {
         String ch = String.fromCharArray(new List<Integer>{97 + i});
-        minFreq.put(ch, Integer.MAX_VALUE);
+        minFreq.put(ch, 1000);
     }
 
     // For each string, count character frequencies

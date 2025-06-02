@@ -1,12 +1,9 @@
 public List<String> commonChars(List<String> strs){    
-    // Initialize frequency map with max values for each character a-z
     Map<String, Integer> minFreq = new Map<String, Integer>();
     for (Integer i = 0; i < 26; i++) {
         String ch = String.fromCharArray(new List<Integer>{97 + i});
-        minFreq.put(ch, 1000);
+        minFreq.put(ch, Integer.MAX_VALUE);
     }
-
-    // For each string, count character frequencies
     for (String str : strs) {
         Map<String, Integer> freq = new Map<String, Integer>();
         for (Integer i = 0; i < str.length(); i++) {
@@ -14,14 +11,11 @@ public List<String> commonChars(List<String> strs){
             freq.put(ch, freq.containsKey(ch) ? freq.get(ch) + 1 : 1);
         }
 
-        // Update min frequency map
         for (String ch : minFreq.keySet()) {
             Integer count = freq.containsKey(ch) ? freq.get(ch) : 0;
             minFreq.put(ch, Math.min(minFreq.get(ch), count));
         }
     }
-
-    // Build result list based on min frequencies
     List<String> result = new List<String>();
     for (String ch : minFreq.keySet()) {
         Integer count = minFreq.get(ch);

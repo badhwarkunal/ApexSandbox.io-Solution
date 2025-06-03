@@ -1,0 +1,41 @@
+public static Boolean sameString(String str1, String str2){
+    Integer s1 = str1.size()-1;
+    Integer s2 = str2.size()-1;
+    Integer skipS1 = 0;
+    Integer skipS2 = 0;
+
+    while(s1 > = 0 || && s2 >= 0){
+        while(s1 > = 0){
+            if(str1[s1] == '#'){
+                skipS1++;
+                s1--;
+            }
+            else if(skipS1 > 0){
+                skipS1 --;
+                s1--;
+            }
+            else break;
+        }
+        while(s2 > = 0){
+            if(str2[s2] == '#'){
+                skipS2++;
+                s2--;
+            }
+            else if(skipS2 > 0){
+                skipS2 --;
+                s2--;
+            }
+            else break;
+        }
+        if(s1 >= 0 && s2 >= 0 && str1[s1] != str2[s2]){
+            return false;
+        }
+        if((s1 >= 0) != (s2 >= 0)){
+            return false;
+        }
+        s1--;
+        s2--;
+    }
+    retunr true;
+}
+

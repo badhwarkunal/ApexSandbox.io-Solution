@@ -6,7 +6,7 @@ public static Boolean sameString(String str1, String str2){
 
     while (s1 >= 0 || s2 >= 0) {
         while (s1 >= 0) {
-            if (str1.charAt(s1) == '#') {
+            if (str1.substring(s1, s1 + 1).equals('#')) {
                 skipS1++;
                 s1--;
             } else if (skipS1 > 0) {
@@ -18,7 +18,7 @@ public static Boolean sameString(String str1, String str2){
         }
 
         while (s2 >= 0) {
-            if (str2.charAt(s2) == '#') {
+            if (str2.substring(s2, s2 + 1).equals('#')) {
                 skipS2++;
                 s2--;
             } else if (skipS2 > 0) {
@@ -29,11 +29,11 @@ public static Boolean sameString(String str1, String str2){
             }
         }
 
-        if (s1 >= 0 && s2 >= 0 && str1.charAt(s1) != str2.charAt(s2)) {
-            return false;
-        }
-
-        if ((s1 >= 0) != (s2 >= 0)) {
+        if (s1 >= 0 && s2 >= 0) {
+            if (!str1.substring(s1, s1 + 1).equals(str2.substring(s2, s2 + 1))) {
+                return false;
+            }
+        } else if (s1 >= 0 || s2 >= 0) {
             return false;
         }
 

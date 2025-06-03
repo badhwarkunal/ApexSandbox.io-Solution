@@ -36,6 +36,6 @@ public static Boolean sameString(String str1, String str2){
         s1--;
         s2--;
     }
-    retunr true;
+    return true;
 }
 

@@ -1,6 +1,6 @@
 public static Boolean sameString(String str1, String str2){
-    Integer s1 = str1.length() - 2;
-    Integer s2 = str2.length() - 2;
+    Integer s1 = str1.length() - 1;
+    Integer s2 = str2.length() - 1;
     Integer skipS1 = 0;
     Integer skipS2 = 0;
 
